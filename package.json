@@ -2,10 +2,10 @@
   "name": "pushnotifservice",
   "version": "1.0.0",
   "description": "Push Notification Service",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/abewartech/Push-Notification-Service#readme",
   "dependencies": {
-    "express": "^4.18.1",
-    "kafkajs": "^2.0.2"
+    "hyper-express": "^6.2.1",
+    "mqtt": "^4.3.7"
   }
 }
