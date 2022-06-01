@@ -1,0 +1,30 @@
+{
+  "name": "pushnotifservice",
+  "version": "1.0.0",
+  "description": "Push Notification Service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abewartech/Push-Notification-Service.git"
+  },
+  "keywords": [
+    "push",
+    "notification",
+    "service",
+    "push",
+    "notification",
+    "push",
+    "notif",
+    "notification",
+    "service"
+  ],
+  "author": "abewartech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abewartech/Push-Notification-Service/issues"
+  },
+  "homepage": "https://github.com/abewartech/Push-Notification-Service#readme"
+}
