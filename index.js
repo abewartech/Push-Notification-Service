@@ -2,27 +2,25 @@ const express = require("express");
 const app = express();
 const PORT = 8080;
 const HOST = "0.0.0.0";
-const mqtt = require("mqtt");
-const client = mqtt.connect("mqtt://localhost");
+const { Kafka } = require("kafkajs");
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-  client.publish("sendnotif", "Hello mqtt");
+const kafka = new Kafka({
+  clientId: "CLIENT",
+  brokers: ["localhost:9093"]
 });
 
-client.on("connect", function () {
-  client.subscribe("sendnotif", function (err) {
-    if (!err) {
-      console.log(err);
-    }
+const producer = kafka.producer();
+
+app.post("/sendnotif", async (req, res) => {
+  res.send("OK");
+
+  await producer.connect();
+  await producer.send({
+    topic: "sendnotif",
+    messages: [{ value: "a" }]
   });
-});
 
-client.on("message", function (topic, message) {
-  if (topic === "sendnotif") {
-    console.log(message.toString());
-  }
-  client.end();
+  await producer.disconnect();
 });
 
 app.listen(PORT, HOST);
